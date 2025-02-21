@@ -9,7 +9,7 @@ def main_page(request):
 
 
 def posts(request):
-    return HttpResponse("Все посты блога")
+    return render(request, 'blog/list_detail.html')
 
 def get_post_by_number(request, number_post):
     return HttpResponse(f"Здесь содержится информация о посте под номером {number_post}")
