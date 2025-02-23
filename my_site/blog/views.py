@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import render_to_string
+from random import sample
 
 
 posts_lst = [
@@ -51,7 +52,7 @@ posts_lst = [
 
 def main_page(request):
     context = {
-        'posts': posts_lst
+        'posts': sample(posts_lst, 3)
     }
     return render(request, 'blog/index.html', context=context)
 
